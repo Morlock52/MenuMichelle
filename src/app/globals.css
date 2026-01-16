@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables for theming */
+:root {
+  /* Primary colors */
+  --color-primary: #FF6B35;
+  --color-primary-hover: #E55A2B;
+  --color-secondary: #2E4057;
+  --color-accent: #48A9A6;
+
+  /* Background & Surface */
+  --color-background: #FAFAFA;
+  --color-surface: #FFFFFF;
+  --color-surface-elevated: #FFFFFF;
+
+  /* Text */
+  --color-text: #1A1A1A;
+  --color-text-muted: #6B7280;
+  --color-text-inverse: #FFFFFF;
+
+  /* Semantic */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+
+  /* Shadows */
+  --shadow-soft: 8px 8px 16px rgba(0, 0, 0, 0.1), -8px -8px 16px rgba(255, 255, 255, 0.8);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+  /* Borders */
+  --border-radius-soft: 0.75rem;
+  --border-radius-card: 1rem;
+  --border-radius-button: 0.5rem;
+}
+
+/* Dark mode variables */
+.dark {
+  --color-background: #111827;
+  --color-surface: #1F2937;
+  --color-surface-elevated: #374151;
+  --color-text: #F9FAFB;
+  --color-text-muted: #9CA3AF;
+  --shadow-soft: 8px 8px 16px rgba(0, 0, 0, 0.3), -8px -8px 16px rgba(255, 255, 255, 0.05);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background-light dark:bg-background-dark;
+    @apply text-gray-900 dark:text-gray-100;
+    @apply antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+  }
+
+  /* Remove default button styles */
+  button {
+    @apply font-medium;
+  }
+}
+
+/* Component styles */
+@layer components {
+  /* Glass morphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .dark .glass {
+    background: rgba(31, 41, 55, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Liquid glass effect (2026 trend) */
+  .liquid-glass {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0.6) 100%
+    );
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  }
+
+  .dark .liquid-glass {
+    background: linear-gradient(
+      135deg,
+      rgba(55, 65, 81, 0.8) 0%,
+      rgba(55, 65, 81, 0.4) 50%,
+      rgba(55, 65, 81, 0.6) 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  /* Soft UI / Neumorphism */
+  .soft-ui {
+    @apply bg-surface-light dark:bg-surface-dark;
+    box-shadow: var(--shadow-soft);
+    border-radius: var(--border-radius-card);
+  }
+
+  /* Skeleton loading animation */
+  .skeleton {
+    @apply animate-skeleton bg-gray-200 dark:bg-gray-700 rounded;
+  }
+
+  /* Price formatting - no currency symbol emphasis */
+  .price {
+    @apply font-semibold text-primary-600 dark:text-primary-400;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Badge styles */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-small font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300;
+  }
+
+  .badge-success {
+    @apply badge bg-success-50 text-success-600 dark:bg-green-900 dark:text-green-300;
+  }
+
+  .badge-warning {
+    @apply badge bg-warning-50 text-warning-600 dark:bg-yellow-900 dark:text-yellow-300;
+  }
+
+  /* Dietary icons container */
+  .dietary-icons {
+    @apply flex gap-1 items-center;
+  }
+
+  .dietary-icon {
+    @apply w-5 h-5 rounded-full flex items-center justify-center text-small;
+  }
+}
+
+/* Utility classes */
+@layer utilities {
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Safe area for mobile devices */
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0);
+  }
+
+  /* Touch action for gestures */
+  .touch-pan-y {
+    touch-action: pan-y;
+  }
+
+  .touch-pan-x {
+    touch-action: pan-x;
+  }
+}

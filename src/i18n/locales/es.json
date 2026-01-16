@@ -1,0 +1,73 @@
+{
+  "common": {
+    "menu": "Menú",
+    "cart": "Carrito",
+    "orders": "Pedidos",
+    "profile": "Perfil",
+    "home": "Inicio",
+    "search": "Buscar",
+    "all": "Todos",
+    "loading": "Cargando...",
+    "error": "Algo salió mal",
+    "retry": "Intentar de nuevo"
+  },
+  "menu": {
+    "title": "Nuestro Menú",
+    "searchPlaceholder": "Buscar platos...",
+    "items": "platos",
+    "popular": "Popular",
+    "soldOut": "Agotado",
+    "addToCart": "Añadir",
+    "customize": "Personalizar"
+  },
+  "cart": {
+    "title": "Tu Carrito",
+    "empty": "Tu carrito está vacío",
+    "emptyDescription": "Añade deliciosos platos para comenzar",
+    "browseMenu": "Ver Menú",
+    "clearAll": "Vaciar",
+    "subtotal": "Subtotal",
+    "tax": "Impuesto",
+    "total": "Total",
+    "placeOrder": "Hacer Pedido"
+  },
+  "orders": {
+    "title": "Tus Pedidos",
+    "description": "Rastrea y consulta tu historial de pedidos",
+    "empty": "Sin pedidos aún",
+    "emptyDescription": "Tu historial de pedidos aparecerá aquí",
+    "startOrdering": "Empezar a Pedir",
+    "status": {
+      "pending": "Pendiente",
+      "confirmed": "Confirmado",
+      "preparing": "Preparando",
+      "ready": "Listo",
+      "completed": "Completado",
+      "cancelled": "Cancelado"
+    },
+    "estimatedReady": "Listo aproximadamente",
+    "orderedAt": "Pedido a las",
+    "reorder": "Repetir Pedido"
+  },
+  "dietary": {
+    "vegetarian": "Vegetariano",
+    "vegan": "Vegano",
+    "glutenFree": "Sin Gluten",
+    "halal": "Halal",
+    "dairyFree": "Sin Lácteos",
+    "nutFree": "Sin Frutos Secos",
+    "spicy": "Picante"
+  },
+  "profile": {
+    "title": "Perfil",
+    "settings": "Configuración",
+    "language": "Idioma",
+    "theme": "Tema",
+    "themeLight": "Claro",
+    "themeDark": "Oscuro",
+    "themeSystem": "Sistema",
+    "notifications": "Notificaciones",
+    "help": "Ayuda y Soporte",
+    "about": "Acerca de"
+  }
+}
